@@ -7,5 +7,16 @@
 <body>
   <h1>🚆 Auto-deploy works!</h1>
   <p>Flask deployed successfully.</p>
+  
+  <h2>Messages:</h2>
+  {% if messages %}
+    <ul>
+      {% for msg in messages %}
+        <li>{{ msg.content if msg.content else msg }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No messages found or unable to connect to database.</p>
+  {% endif %}
 </body>
 </html>
